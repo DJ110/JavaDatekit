@@ -1,0 +1,67 @@
+<project name="JavaDatekit" default="all" basedir=".">
+    <target name="init">
+        <tstamp/>
+        <property name="build" value="build"/>
+        <property name="dist" value="dist"/>
+        <property name="libdir" value="libs"/>
+        <property name="testlib" value="test-lib"/>
+        <property name="old-srcdir" value="src" />
+        <property name="tempdir" value="tempdir" />
+        <property name="srcdir" value="${tempdir}/java"/>
+        <property name="resourcedir" value="${tempdir}/resources"/>
+        <property name="manifestdir" value="${tempdir}/manifest"/>
+        <property environment="env"/>
+        <property name="androidsdk" value="${env.ANDROID_HOME}"/>
+        <property name="miscdir" value="misc" />
+        <property name="BUILDSTAMP" value="---[ Developer build DO NOT DISTRIBUTE ]---" />
+        <filter token="BUILDSTAMP" value="${BUILDSTAMP}"/>
+        <property name="BUILDNUMBER" value="1" />
+        <filter token="BUILDNUMBER" value="${BUILDNUMBER}"/>
+    </target>
+     
+    <target name="prepare" depends="init">
+        <mkdir dir="${build}"/>
+        <mkdir dir="${srcdir}"/>
+        <mkdir dir="${manifestdir}"/>
+        <copy todir="${srcdir}" filtering="true" encoding="UTF-8">
+            <fileset dir="${old-srcdir}">
+            </fileset>
+        </copy>
+        <!-- 
+        <copy todir="${manifestdir}" filtering="true" encoding="UTF-8" flatten="true">
+            <fileset dir="misc" includes="**/*.mf" />
+        </copy>
+         -->
+    </target>
+     
+    <target name="compile" depends="prepare">
+        <mkdir dir="${build}"/>
+        <javac destdir="${build}" deprecation="off" debug="${DEBUG}" source="1.6" target="1.6" includeantruntime="false" encoding="UTF-8">
+            <src path="${srcdir}"/>
+            <classpath>
+                <!-- 
+                <fileset dir="${libdir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+               	 -->
+            </classpath>
+        </javac>
+    </target>
+     
+    <target name="toolkit" depends="compile">
+        <mkdir dir="${dist}"/>
+        <jar destfile="${dist}/datekit.jar">
+            <fileset dir="${build}" />
+        </jar>
+    </target>
+     
+    <target name="all" depends="toolkit"/>
+     
+    <target name="clean" depends="init">
+        <delete dir="${tempdir}"/>
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+        <delete dir="${manifestdir}"/>
+    </target>
+ 
+</project>
