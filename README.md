@@ -29,77 +29,77 @@ There are 3 types of
 **Constructor**
 - **public DateBuilder()**
 Initialize
-- ** public DateBuilder( TimeZone zone ) **
+- **public DateBuilder( TimeZone zone )**
 Initialize date with TimeZone
-- ** public DateBuilder( Date date ) **
+- **public DateBuilder( Date date )**
 Initialize date with date 
 
 **Builder**
 Builder part is operation this builder data itself
-- ** public DateBuilder on( Date date ) **
+- **public DateBuilder on( Date date )**
 Set date
-- ** public DateBuilder addDay( int day ) **
+- **public DateBuilder addDay( int day )**
 Add day date to builder
-- ** public DateBuilder subDay( int day ) **
+- **public DateBuilder subDay( int day )**
 Sub day date to builder
-- ** public DateBuilder begin() **
+- **public DateBuilder begin()**
 Set time to 00:00:00
-- ** public DateBuilder end() **
+- **public DateBuilder end()**
 Set time to end of day 23:59:59
-- ** public DateBuilder firstDateOfMonth() **
+- **public DateBuilder firstDateOfMonth()**
 Set first day of the month
-- ** public DateBuilder lastDayOfMonth() **
+- **public DateBuilder lastDayOfMonth()**
 Set last day of the month
-- ** public DateBuilder nextMonthFirst() **
+- **public DateBuilder nextMonthFirst()**
 Set first day of the next month
-- ** public DateBuilder getFromYMD( int year, int month, int day ) **
+- **public DateBuilder getFromYMD( int year, int month, int day )**
 Set year, month, day
-- ** public DateBuilder getDayofDay( int day ) **
+- **public DateBuilder getDayofDay( int day )**
 Set week day
-- ** public DateBuilder getGMT() **
+- **public DateBuilder getGMT()**
 Set GMT timezone
 
 **Get Data**
 Get date, calendar and other parameters
-- ** public int getYear() **
+- **public int getYear()**
 Get year
-- ** public int getMonth() **
+- **public int getMonth()**
 Get month
-- ** public int getHour() **
+- **public int getHour()**
 Get hour(24h)
-- ** public int getSecond()**
+- **public int getSecond()**
 Get second
-- ** public Date getTime() **
+- **public Date getTime()**
 Get date instance
-- ** public Calendar getCal() **
+- **public Calendar getCal()**
 Get calendar instance
-- ** public boolean isWeekDay() **
+- **public boolean isWeekDay()**
 Whether this datebuilder is week day or not
-- ** public boolean isWeekEnd() **
+- **public boolean isWeekEnd()**
 Whether this datebuilder is week end or not
-- ** public boolean before ( Calendar calendar ) **
+- **public boolean before ( Calendar calendar )**
 Whether this datebuilder is before target calendar or not
-- ** public boolean before ( Date date ) **
+- **public boolean before ( Date date )**
 Whether this datebuilder is before target date or not
-- ** public boolean after ( Calendar calendar ) **
+- **public boolean after ( Calendar calendar )**
 Whether this datebuilder is after target calendar or not
-- ** public boolean after ( Date date ) **
+- **public boolean after ( Date date )**
 Whether this datebuilder is after target date or not
-- ** public DateBuilder copy() **
+- **public DateBuilder copy()**
 Make copy of this instance
-** Format **
+**Format**
 Return string using format
-- ** public String formatYear() **
+- **public String formatYear()**
 Return yyyy style
-- ** public String formatMonth() **
+- **public String formatMonth()**
 Return MM style
-- ** public String formatDay() **
+- **public String formatDay()**
 Return dd style
-- ** public String formatA() **
+- **public String formatA()**
 Return yyyy-MM-dd style
-- ** public String formatB() **
+- **public String formatB()**
 Return yyyy/MM/dd style
-- ** public String formatFull() **
+- **public String formatFull()**
 Return yyyy/MM/dd HH:mm:ss style
 
 [DJ110]: http://atmarkplant.com
