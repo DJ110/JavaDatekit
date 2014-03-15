@@ -87,6 +87,7 @@ Whether this datebuilder is after target calendar or not
 Whether this datebuilder is after target date or not
 - **public DateBuilder copy()**
 Make copy of this instance
+
 **Format**
 Return string using format
 - **public String formatYear()**
