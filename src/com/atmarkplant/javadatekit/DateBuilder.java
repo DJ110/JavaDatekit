@@ -184,7 +184,6 @@ public class DateBuilder
 		return cal.getTimeInMillis() > date.getTime();
 	}
 	
-	
 	public DateBuilder copy() 
 	{
 		return new DateBuilder(cal.getTime());
@@ -217,9 +216,6 @@ public class DateBuilder
 	public String formatB() 
 	{
 		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
-		
-		
-		
 		return format.format(cal.getTime());
 	}
 	
